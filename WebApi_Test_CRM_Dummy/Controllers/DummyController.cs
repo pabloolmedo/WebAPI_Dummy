@@ -15,9 +15,9 @@ namespace WebApi_Test_CRM_Dummy.Controllers
 
     public class DummyController : ApiController
     {
-        
 
-        private static readonly log4net.ILog logger = 
+
+        private static readonly log4net.ILog logger =
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         //localhost:44372/api/Dummy
@@ -26,22 +26,25 @@ namespace WebApi_Test_CRM_Dummy.Controllers
         //{
         //    return new string[] { "Dummy", "Test" };
         //}
+
+        //localhost:44372/api/Dummy
+
         [HttpGet]
         public object Get()
         {
 
-            logger.Info("FUNCIONAAAA!!!");
+            logger.Info("Iniciando");
             try
             {
                 logger.Info("entro al try");
-            object empleado = new
-            {
-                Fullname = "Dummy Test",
-                address = "rivera indarte 650",
+                object empleado = new
+                {
+                    Fullname = "Dummy Test",
+                    address = "rivera indarte 650",
 
-            };
-
-            return empleado;
+                };
+                logger.Info("Fin");
+                return empleado;
 
             }
             catch (Exception e)
