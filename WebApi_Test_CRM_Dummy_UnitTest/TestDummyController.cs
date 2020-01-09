@@ -25,7 +25,7 @@ namespace WebApi_Test_CRM_Dummy_UnitTest
             DummyController controller = new DummyController();
 
             //Act
-            object result = controller.Get();
+            object result = controller.GetTest();
             //Assert
             Assert.IsNotNull(result);
 
