@@ -12,14 +12,16 @@ using System.IO;
 
 namespace WebApi_Test_CRM_Dummy.Controllers
 {
+
     //VALIDACION DE ENTORNO
-    
+     
+
     [EnableCors(origins: "*", headers: "*", methods: "*")]
 
     public class DummyController : ApiController
     {
 
-        
+
         
 
 
