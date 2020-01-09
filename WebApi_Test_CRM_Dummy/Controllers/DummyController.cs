@@ -33,7 +33,8 @@ namespace WebApi_Test_CRM_Dummy.Controllers
         public object Get()
         {
 
-            logger.Info("Iniciando");
+            logger.Info("");
+            logger.Debug("parametros:");
             try
             {
                 logger.Info("entro al try");
@@ -43,17 +44,17 @@ namespace WebApi_Test_CRM_Dummy.Controllers
                     address = "rivera indarte 650",
 
                 };
-                logger.Info("Fin");
+                logger.Info("");
                 return empleado;
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                logger.Error(e);
+                logger.Error("ERROR" + HttpStatusCode.NotFound.ToString() + ex.ToString());
                 throw;
             }
         }
-        // GET: api/Dummy/5
+        //GET: api/Dummy/5
         public string Get(int id)
         {
             return "value";
