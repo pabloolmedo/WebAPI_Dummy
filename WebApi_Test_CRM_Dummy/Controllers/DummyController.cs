@@ -7,53 +7,64 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using log4net;
 using System.IO;
-
-
+using WebApi_Test_CRM_Dummy;
 
 namespace WebApi_Test_CRM_Dummy.Controllers
 {
 
-    //VALIDACION DE ENTORNO
-     
+
+
 
     [EnableCors(origins: "*", headers: "*", methods: "*")]
 
     public class DummyController : ApiController
     {
-
-
-        
-
+        //VALIDACION DE ENTORNO
+        //string entorno = RuntimeVariableEnvironmentTest.GetVariable();
+        string entorno = "hola";
 
         private static readonly log4net.ILog logger =
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+
+
+
         [HttpGet]
         public object GetTest()
         {
-
-            //LOGS
-            logger.Info("Iniciando");
-            try
+            //VALIDAR ENTORNO "DESA"
+            if (entorno == "DESA")
             {
-                logger.Info("entro al try");
-                object empleado = new
+
+                //LOGS
+                logger.Info("Iniciando");
+                try
                 {
-                    Fullname = "Dummy Test",
-                    address = "rivera indarte 650",
+                    logger.Info("entro al try");
+                    object empleado = new
+                    {
+                        Fullname = "Dummy Test",
+                        address = "rivera indarte 650",
 
-                };
-                logger.Info("");
-                return empleado;
+                    };
+
+                    logger.Info("");
+                    return empleado;
+
+                }
+                catch (Exception ex)
+                {
+                    logger.Error("ERROR" + HttpStatusCode.NotFound.ToString() + ex.ToString());
+                    throw;
+                }
 
             }
-            catch (Exception ex)
+            else
             {
-                logger.Error("ERROR" + HttpStatusCode.NotFound.ToString() + ex.ToString());
-                throw;
+                throw new Exception("AMBIENTE INCORRECTO");
             }
-
         }
+
 
     }
 
