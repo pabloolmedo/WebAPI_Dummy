@@ -24,12 +24,12 @@ namespace WebApi_Test_CRM_Dummy
                 // Check whether the environment variable exists.
                 value = Environment.GetEnvironmentVariable("RUNTIME_ENVIRONMENT", EnvironmentVariableTarget.Machine);
                 // If necessary, create it.
-                if (value == null)
-                {
-                    Environment.SetEnvironmentVariable("RUNTIME_ENVIRONMENT", "DESA", EnvironmentVariableTarget.Machine);
-                    // Now retrieve it.
-                    value = Environment.GetEnvironmentVariable("RUNTIME_ENVIRONMENT");
-                }
+                //if (value == null)
+                //{
+                //    Environment.SetEnvironmentVariable("RUNTIME_ENVIRONMENT", "DESA", EnvironmentVariableTarget.Machine);
+                //    // Now retrieve it.
+                //    value = Environment.GetEnvironmentVariable("RUNTIME_ENVIRONMENT");
+                //}
                 return value;
             }
             catch (Exception)

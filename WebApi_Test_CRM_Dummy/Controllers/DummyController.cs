@@ -20,8 +20,8 @@ namespace WebApi_Test_CRM_Dummy.Controllers
     public class DummyController : ApiController
     {
         //VALIDACION DE ENTORNO
-        //string entorno = RuntimeVariableEnvironmentTest.GetVariable();
-        string entorno = "hola";
+        string entorno = RuntimeVariableEnvironmentTest.GetVariable();
+        
 
         private static readonly log4net.ILog logger =
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -35,6 +35,7 @@ namespace WebApi_Test_CRM_Dummy.Controllers
             //VALIDAR ENTORNO "DESA"
             if (entorno == "DESA")
             {
+            
 
                 //LOGS
                 logger.Info("Iniciando");
