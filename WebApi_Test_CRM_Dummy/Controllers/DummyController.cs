@@ -20,7 +20,7 @@ namespace WebApi_Test_CRM_Dummy.Controllers
     public class DummyController : ApiController
     {
         //VALIDACION DE ENTORNO
-        string entorno = RuntimeVariableEnvironmentTest.GetVariable();
+        string entorno = Environments.GetVariable();
         
 
         private static readonly log4net.ILog logger =
@@ -38,10 +38,10 @@ namespace WebApi_Test_CRM_Dummy.Controllers
             
 
                 //LOGS
-                logger.Info("Iniciando");
+                logger.Info("");
                 try
                 {
-                    logger.Info("entro al try");
+                    logger.Info("");
                     object empleado = new
                     {
                         Fullname = "Dummy Test",

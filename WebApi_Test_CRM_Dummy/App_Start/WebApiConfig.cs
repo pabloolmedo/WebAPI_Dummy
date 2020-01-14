@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -9,6 +10,8 @@ namespace WebApi_Test_CRM_Dummy
     {
         public static void Register(HttpConfiguration config)
         {
+            //Configuracion de log4net
+            XmlConfigurator.Configure();
             // Configuración y servicios de API web
             config.EnableCors();
             // Rutas de API web
